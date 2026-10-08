@@ -1,36 +1,78 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" class="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sebastian Gerden - Portfolio</title>
-  <!-- Tailwind CSS via CDN direkt einbinden -->
+  <!-- Tailwind CSS via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col justify-center items-center p-6">
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col justify-center items-center p-6 relative overflow-x-hidden">
 
-  <!-- Visitenkarten-Container -->
-  <div class="max-w-xl text-center bg-slate-800 p-8 rounded-xl shadow-xl border border-slate-700">
-    <h1 class="text-3xl font-bold text-sky-400 mb-2">Sebastian Gerden</h1>
-    <p class="text-slate-400 font-medium mb-4">Angehender Fachinformatiker für Anwendungsentwicklung</p>
+  <!-- Interaktiver Hintergrund-Glow (Dezentes Leuchten im Hintergrund) -->
+  <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-sky-500/15 rounded-full blur-3xl pointer-events-none animate-pulse"></div>
+
+  <!-- Hauptkarte mit Hover-Elevate und Smoothem Übergang -->
+  <main class="relative z-10 max-w-xl w-full bg-slate-900/80 backdrop-blur-md p-8 rounded-2xl shadow-2xl border border-slate-800 transition-all duration-300 hover:border-sky-500/50 hover:shadow-sky-500/10 hover:-translate-y-1">
     
-    <p class="text-slate-300 text-sm leading-relaxed mb-6">
-      Aktuell in der Umschulung gemäß IHK-Lehrplan. Mein zukünftiger Schwerpunkt liegt in der Anwendungsentwicklung mit 
-      <span class="text-sky-300 font-semibold">C#</span> und <span class="text-sky-300 font-semibold">.NET</span>.
-    </p>
-
-    <!-- Skills / Highlights -->
-    <div class="flex flex-wrap justify-center gap-2 mb-6">
-      <span class="bg-sky-500/10 text-sky-400 text-xs font-semibold px-3 py-1 rounded-full border border-sky-500/20">C# / .NET</span>
-      <span class="bg-slate-700 text-slate-300 text-xs font-semibold px-3 py-1 rounded-full">IHK Umschulung</span>
-      <span class="bg-slate-700 text-slate-300 text-xs font-semibold px-3 py-1 rounded-full">Tailwind CSS</span>
+    <!-- Status-Badge mit pulsierendem Punkt -->
+    <div class="flex justify-center mb-6">
+      <span class="inline-flex items-center gap-2 bg-slate-800/80 text-sky-400 text-xs font-medium px-3.5 py-1.5 rounded-full border border-slate-700 shadow-inner">
+        <span class="relative flex h-2 w-2">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-sky-500"></span>
+        </span>
+        In Umschulung & Open for Projects
+      </span>
     </div>
 
-    <!-- Contact / GitHub Link -->
-    <a href="https://github.com/SeGer1977" target="_blank" class="inline-block bg-sky-500 hover:bg-sky-600 text-white font-medium text-sm px-5 py-2.5 rounded-lg transition-colors">
-      GitHub Profil besuchen
-    </a>
-  </div>
+    <!-- Profil-Header -->
+    <div class="text-center mb-6">
+      <h1 class="text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-white via-slate-200 to-sky-400 bg-clip-text text-transparent mb-2">
+        Sebastian Gerden
+      </h1>
+      <p class="text-slate-400 font-medium">
+        Angehender Fachinformatiker für Anwendungsentwicklung
+      </p>
+    </div>
+    
+    <p class="text-slate-300 text-sm leading-relaxed text-center mb-8">
+      Aktuell in der Umschulung gemäß IHK-Lehrplan. Mein zukünftiges Steckenpferd liegt in der objektorientierten Softwareentwicklung mit 
+      <span class="text-sky-400 font-semibold underline decoration-sky-500/30 decoration-2 underline-offset-4">C#</span> und 
+      <span class="text-sky-400 font-semibold underline decoration-sky-500/30 decoration-2 underline-offset-4">.NET</span>.
+    </p>
+
+    <!-- Skills-Badges mit Hover-Effekten -->
+    <div class="flex flex-wrap justify-center gap-2 mb-8">
+      <span class="bg-sky-500/10 text-sky-400 text-xs font-semibold px-3 py-1.5 rounded-lg border border-sky-500/20 hover:bg-sky-500 hover:text-white transition-all cursor-default">
+        C# / .NET
+      </span>
+      <span class="bg-slate-800 text-slate-300 text-xs font-semibold px-3 py-1.5 rounded-lg border border-slate-700 hover:border-slate-500 transition-all cursor-default">
+        IHK Umschulung
+      </span>
+      <span class="bg-slate-800 text-slate-300 text-xs font-semibold px-3 py-1.5 rounded-lg border border-slate-700 hover:border-slate-500 transition-all cursor-default">
+        Tailwind CSS
+      </span>
+      <span class="bg-slate-800 text-slate-300 text-xs font-semibold px-3 py-1.5 rounded-lg border border-slate-700 hover:border-slate-500 transition-all cursor-default">
+        Git / GitHub
+      </span>
+    </div>
+
+    <!-- Interaktiver Button mit Glow & Pfeil-Animation -->
+    <div class="flex justify-center">
+      <a href="https://github.com/SeGer1977" target="_blank" class="group relative inline-flex items-center gap-2 bg-sky-500 hover:bg-sky-400 text-slate-950 font-semibold text-sm px-6 py-3 rounded-xl transition-all shadow-lg shadow-sky-500/20 hover:shadow-sky-400/40 active:scale-95">
+        <span>GitHub Profil besuchen</span>
+        <svg class="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+        </svg>
+      </a>
+    </div>
+
+  </main>
+
+  <footer class="mt-8 text-center text-xs text-slate-500">
+    © 2026 Sebastian Gerden • Gehostet auf GitHub Pages
+  </footer>
 
 </body>
 </html>
